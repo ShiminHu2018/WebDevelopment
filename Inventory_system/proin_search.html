@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>库存系统</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!--导航栏-->
+<div id="header"></div>
+
+<!--侧边栏-->
+
+<div class="container-fluid">
+    <div class="row sidebar">
+        <div class="col-sm-3 col-md-2">
+<div class="navbar navbar-default " >
+    <ul class="nav sidebarheight" id="Mu1">
+        <li>
+            <!--搜索-->
+            <div class="input-group mysearch">
+
+                <input type="text" class="form-control"/>
+                    <span class="input-group-btn ">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  </span>
+            </div>
+        </li>
+        <li>
+            <a href="#sub1"  data-toggle="collapse" >库存管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub1" class="nav collapse">
+                <li><a href="unpro.html"><span class="glyphicon glyphicon-list-alt"></span> 未出库管理</a> </li>
+                <li><a href="alpro.html"><span class="glyphicon glyphicon-list-alt"></span> 已出库管理</a> </li>
+                <li><a href="stock.html"><span class="glyphicon glyphicon-list-alt"></span> 库存清单</a> </li>
+                <li><a href="stock_print.html"><span class="glyphicon glyphicon-list-alt"></span> 每月报表统计</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#sub2"  data-toggle="collapse" >入库管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub2" class="nav collapse">
+                <li><a href="supplier.html"><span class="glyphicon glyphicon-info-sign"></span> 供应商信息</a> </li>
+                <li><a href="proin.html"><span class="glyphicon glyphicon-list-alt"></span> 入库登记</a> </li>
+                <li><a href="proin_search.html"><span class="glyphicon glyphicon-list-alt"></span> 入库信息</a> </li>
+                <li><a href="proin_print.html"><span class="glyphicon glyphicon-print"></span> 入库打印</a> </li>
+                <li><a href="proin_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                <li><a href="proin_log.html"><span class="glyphicon glyphicon-list-alt"></span> 入库修改日志</a> </li>
+                <li><a href="supplier_log.html"><span class="glyphicon glyphicon-list-alt"></span> 供应商修改日志</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#sub3"  data-toggle="collapse" >出库管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub3" class="nav collapse">
+                <li><a href="receiver.html"><span class="glyphicon glyphicon-info-sign"></span> 领取人信息</a> </li>
+                <li><a href="proout.html"><span class="glyphicon glyphicon-list-alt"></span> 出库登记</a> </li>
+                <li><a href="proout_search.html"><span class="glyphicon glyphicon-info-sign"></span> 出库信息</a> </li>
+                <li><a href="proin_print.html"><span class="glyphicon glyphicon-print"></span> 出库打印</a> </li>
+                <li><a href="proout_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                <li><a href="proout_log.html"><span class="glyphicon glyphicon-list-alt"></span> 出库修改日志</a> </li>
+                <li><a href="receiver_log.html"><span class="glyphicon glyphicon-list-alt"></span> 领取人修改日志</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#sub4"  data-toggle="collapse" >退库管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub4" class="nav collapse">
+                <li><a href="retstock_input.html"><span class="glyphicon glyphicon-list-alt"></span> 退库登记</a> </li>
+                <li><a href="retstock_search.html"><span class="glyphicon glyphicon-info-sign"></span> 退库信息</a> </li>
+                <li><a href="retstock_print.html"><span class="glyphicon glyphicon-print"></span> 退库打印</a> </li>
+                <li><a href="retstock_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                <li><a href="retstock_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#sub5"  data-toggle="collapse" >退厂管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub5" class="nav collapse">
+                <li><a href="retmanuf.html"><span class="glyphicon glyphicon-list-alt"></span> 退厂登记</a> </li>
+                <li><a href="retmanuf_search.html"><span class="glyphicon glyphicon-info-sign"></span> 退厂信息</a> </li>
+                <li><a href="retmanuf_print.html"><span class="glyphicon glyphicon-print"></span> 退厂打印</a> </li>
+                <li><a href="retmanuf_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                <li><a href="retmanuf_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#sub6"  data-toggle="collapse" >未出库损耗管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub6" class="nav collapse">
+                <li><a href="nobreak.html"><span class="glyphicon glyphicon-list-alt"></span> 损耗登记</a> </li>
+                <li><a href="nobreak_search.html"><span class="glyphicon glyphicon-info-sign"></span> 损耗信息</a> </li>
+                <li><a href="nobreak_print.html"><span class="glyphicon glyphicon-print"></span> 损耗打印</a> </li>
+                <li><a href="nobreak_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                <li><a href="nobreak_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+            </ul>
+        </li>
+        <li>
+            <a href="#sub7"  data-toggle="collapse" >已出库损耗管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub7" class="nav collapse">
+                <li><a href="send_search"><span class="glyphicon glyphicon-info-sign"></span> 损耗材料统计</a> </li>
+                <li><a href="isbreak.html"><span class="glyphicon glyphicon-list-alt"></span> 损耗登记</a> </li>
+                <li><a href="isbreak_search.html"><span class="glyphicon glyphicon-info-sign"></span> 损耗信息</a> </li>
+                <li><a href="isbreak_print.html"><span class="glyphicon glyphicon-print"></span> 损耗打印</a> </li>
+                <li><a href="isbreak_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                <li><a href="isbreak_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+            </ul>
+        </li>
+
+        <li>
+            <a href="#sub8"  data-toggle="collapse" >系统管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+            <ul id="sub8" class="nav collapse">
+                <li><a href="information1_search.html"><span class="glyphicon glyphicon-list-alt"></span> 一级菜单管理</a> </li>
+                <li><a href="information2_search.html"><span class="glyphicon glyphicon-list-alt"></span> 二级菜单管理</a> </li>
+                <li><a href="account.html"><span class="glyphicon glyphicon-user"></span> 账号管理</a> </li>
+                <li><a href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a> </li>
+            </ul>
+        </li>
+
+    </ul>
+</div>
+            </div>
+
+        <div class="col-sm-9 col-md-10">
+            <ol class="breadcrumb sidebarheight">
+                <span >当前位置：</span>
+                <li><a href="#" class="active">首页</a></li>
+                <li><a href="#">库存管理</a></li>
+                <li><a href="proin_search.html">入库信息</a></li>
+            </ol>
+            <div class="title_right"><strong>查询信息</strong></div>
+<form class="form-inline">
+            <!-- Split button -->
+  <div class="form-group">
+      <label>种类：</label>
+      <select class="form-control">
+          <option>请选择</option>
+          <option>办公用品</option>
+          <option>固定资产</option>
+          <option>广告用品</option>
+          <option>销售品</option>
+          <option>药材</option>
+          <option>医疗耗材</option>
+          <option>医疗器械</option>
+      </select>
+      <select class="form-control">
+          <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+          <option>办公用品</option>
+          <option>固定资产</option>
+          <option>广告用品</option>
+          <option>销售品</option>
+          <option>药材</option>
+          <option>医疗耗材</option>
+          <option>医疗器械</option>
+      </select>
+
+      <label>材料名称：</label>
+      <select class="form-control ">
+          <option>请选择</option>
+          <option>办公用品</option>
+          <option>固定资产</option>
+          <option>广告用品</option>
+          <option>销售品</option>
+          <option>药材</option>
+          <option>医疗耗材</option>
+          <option>医疗器械</option>
+      </select>
+      <select class="form-control">
+          <option>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</option>
+          <option>办公用品</option>
+          <option>固定资产</option>
+          <option>广告用品</option>
+          <option>销售品</option>
+          <option>药材</option>
+          <option>医疗耗材</option>
+          <option>医疗器械</option>
+      </select>
+      <button type="submit" class="btn btn-default">查询</button>
+      &nbsp;&nbsp;  &nbsp;&nbsp;   &nbsp;&nbsp;  &nbsp;&nbsp;
+          <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-export" ></span>&nbsp;导出</button>
+
+</form>
+        </div> <!--formgroup-->
+
+        <div class="tablesize">
+<table class="table table-striped table-bordered table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>分类</th>
+        <th>类型</th>
+        <th>材料编号</th>
+        <th>材料名称</th>
+        <th>材料型号</th>
+        <th>批次号</th>
+        <th>生产厂家</th>
+        <th>购买单位</th>
+        <th>购买数量</th>
+        <th>无税单价</th>
+        <th>成本价格</th>
+        <th>销售价格</th>
+        <th>库存数量</th>
+        <th>库存单位</th>
+        <th>有效期</th>
+        <th>操作</th>
+        <th>提示</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>1</td>
+        <td>固定资产</td>
+        <td>家用电器</td>
+        <td>sz10060002</td>
+        <td>1</td>
+        <td>2</td>
+        <td>20160930001</td>
+        <td>3</td>
+        <td>板</td>
+        <td>5.00</td>
+        <td>4.00</td>
+        <td>4.24</td>
+        <td>4.28</td>
+        <td>5.0</td>
+        <td>版</td>
+        <td class="btn-danger">2016-08-29</td>
+
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>2</td>
+        <td>医疗耗材</td>
+        <td>低值耗材</td>
+        <td>sz60010034</td>
+        <td>医用棉球</td>
+        <td>&nbsp;</td>
+        <td>20160905004</td>
+        <td>稳健</td>
+        <td>包</td>
+        <td>2.00</td>
+        <td>30.00</td>
+        <td>33.00</td>
+        <td>90.00</td>
+        <td>0.0</td>
+        <td>包</td>
+        <td>&nbsp;</td>
+        <td><a href="#" data-toggle="modal" data-target="#myModal">详细</a>&nbsp;|&nbsp;<a href="#" >删除</a></td>
+        <td  class="btn-danger">材料已领完</td>
+    </tr>
+
+    <tr>
+        <td>3</td>
+        <td>销售品</td>
+        <td>口腔护理类</td>
+        <td>sz40010016</td>
+        <td>牙线</td>
+        <td>&nbsp;</td>
+        <td>20160801001</td>
+        <td>不祥</td>
+        <td>袋</td>
+        <td>5.00</td>
+        <td>18.00</td>
+        <td>19.00</td>
+        <td>36.00</td>
+        <td>5.0</td>
+        <td>袋</td>
+        <td class="btn-info"> 2018-07-01</td>
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>4</td>
+        <td>医疗耗材</td>
+        <td>美白耗材</td>
+        <td>sz60020001</td>
+        <td>美白凝胶</td>
+        <td>单人套装</td>
+        <td>20160527002</td>
+        <td>beyond</td>
+        <td>盒</td>
+        <td>1.00</td>
+        <td>400.00</td>
+        <td>440.00</td>
+        <td>600.00</td>
+        <td>1.0</td>
+        <td>盒</td>
+        <td>&nbsp;</td>
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>5</td>
+        <td>医疗耗材</td>
+        <td>美白耗材</td>
+        <td>sz60020001</td>
+        <td>美白凝胶</td>
+        <td>单人套装</td>
+        <td>20160527002</td>
+        <td>beyond</td>
+        <td>盒</td>
+        <td>1.00</td>
+        <td>400.00</td>
+        <td>440.00</td>
+        <td>600.00</td>
+        <td>1.0</td>
+        <td>盒</td>
+        <td>&nbsp;</td>
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>6</td>
+        <td>医疗耗材</td>
+        <td>美白耗材</td>
+        <td>sz60020001</td>
+        <td>美白凝胶</td>
+        <td>单人套装</td>
+        <td>20160527002</td>
+        <td>beyond</td>
+        <td>盒</td>
+        <td>1.00</td>
+        <td>400.00</td>
+        <td>440.00</td>
+        <td>600.00</td>
+        <td>1.0</td>
+        <td>盒</td>
+        <td>&nbsp;</td>
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>7</td>
+        <td>医疗耗材</td>
+        <td>美白耗材</td>
+        <td>sz60020001</td>
+        <td>美白凝胶</td>
+        <td>单人套装</td>
+        <td>20160527002</td>
+        <td>beyond</td>
+        <td>盒</td>
+        <td>1.00</td>
+        <td>400.00</td>
+        <td>440.00</td>
+        <td>600.00</td>
+        <td>1.0</td>
+        <td>盒</td>
+        <td>&nbsp;</td>
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>8</td>
+        <td>医疗耗材</td>
+        <td>美白耗材</td>
+        <td>sz60020001</td>
+        <td>美白凝胶</td>
+        <td>单人套装</td>
+        <td>20160527002</td>
+        <td>beyond</td>
+        <td>盒</td>
+        <td>1.00</td>
+        <td>400.00</td>
+        <td>440.00</td>
+        <td>600.00</td>
+        <td>1.0</td>
+        <td>盒</td>
+        <td>&nbsp;</td>
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>9</td>
+        <td>医疗耗材</td>
+        <td>美白耗材</td>
+        <td>sz60020001</td>
+        <td>美白凝胶</td>
+        <td>单人套装</td>
+        <td>20160527002</td>
+        <td>beyond</td>
+        <td>盒</td>
+        <td>1.00</td>
+        <td>400.00</td>
+        <td>440.00</td>
+        <td>600.00</td>
+        <td>1.0</td>
+        <td>盒</td>
+        <td>&nbsp;</td>
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+        <td>&nbsp;</td>
+    </tr>
+
+    <tr>
+        <td>10</td>
+        <td>医疗耗材</td>
+        <td>美白耗材</td>
+        <td>sz60020001</td>
+        <td>美白凝胶</td>
+        <td>单人套装</td>
+        <td>20160527002</td>
+        <td>beyond</td>
+        <td>盒</td>
+        <td>1.00</td>
+        <td>400.00</td>
+        <td>440.00</td>
+        <td>600.00</td>
+        <td>1.0</td>
+        <td>盒</td>
+        <td>&nbsp;</td>
+
+        <td> <a href="#" data-toggle="modal" data-target="#myModal">详细</a></td>
+
+        <td>&nbsp;</td>
+    </tr>
+    </tbody>
+
+</table>
+
+
+
+    <nav >
+
+        <ul class="pagination" id="pagesize">
+            <li><a href="#">总共 480 条记录 &nbsp;  &nbsp;  10 条记录在当前页面    &nbsp;  &nbsp;   1-10 在此页    &nbsp;  &nbsp;  1/48 页  </a></li>
+            <li>
+                <a href="#" aria-label="Previous">
+                    <span aria-hidden="true">上一页</span>
+                </a>
+            </li>
+            <li><a href="#">1</a></li>
+            <li><a href="#">2</a></li>
+            <li><a href="#">3</a></li>
+            <li><a href="#">4</a></li>
+            <li><a href="#">5</a></li>
+            <li>
+                <a href="#" aria-label="Next">
+                    <span aria-hidden="true">下一页</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</div><!--tablesize-->
+
+
+            <!-- 按钮触发模态框 -->
+
+            <!-- 模态框（Modal） -->
+            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">详细信息</h4>
+                        </div>
+
+
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+                            <tr><td><b>* 分类：</td><td>固定资产</td><td><b>	* 类型：</td><td>家具家电</td><td><b>*材料编号：</td><td>sz10060002</td></tr>
+                            <tr><td><b>* 材料名称：</td><td>1</td><td><b>材料型号：</td><td>2</td><td><b>批次号：</td><td>20160930001</td></tr>
+                            <tr><td><b>* 生产厂家：</td><td>3</td><td>	<b>购买单位：</td><td>板</td><td><b>最小领取单位：</td><td>板</td></tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <thead><tr><th>包装规格</th><th>无税单价</th><th>购买数量</th><th>购买总价</th><th>税率</th><th>成本价格</th><th>销售加价幅度</th><th>销售价格</th></tr> </thead>
+                                <tr><td>1.00</td><td>4.00</td><td>5.00</td><td>20.00</td><td>6.0 %</td><td>4.24</td><td>7.0 %</td><td>4.28</td></tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr><td><b>* 最小领取单价：</td><td>4.00</td><td><b>	* 最小成本价格：</td><td>4.24</td><td><b>*最小销售价格：</td><td>4.28</td></tr>
+                                <tr><td><b>* 本批次库存数量：</td><td>5.0</td><td><b>*有效期：</td><td>2016-08-29</td><td><b>*供货商：</td><td>爱牙库</td></tr>
+                                <tr><td><b>领取日期：</td><td>2016-09-30</td><td>	<b>入库存放位置：</td><td>3诊室1号柜</td><td><b>入库人：</td><td>沈红艳</td></tr>
+                                <tr><td><b>* 是否赠送：</td><td>否</td><td><b>	* 支付状况：</td><td>未支付</td><td><b>支付时间</td><td>&nbsp;</td></tr>
+                                <tr><td><b>支付对象:</td><td>奥齿泰（深圳）贸易有限公司</td><td><b>已支付金额：</td><td>0.00</td><td><b>已支付单据编号：</td><td>&nbsp;</td></tr>
+                                <tr><td><b>尚欠支付金额：</td><td>20.00</td><td colspan="4">	<b>提示：</td></tr>
+                            </table>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-default">修改</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal -->
+            </div>
+
+
+        </div><!-- <div class="col-sm-9 col-md-10">-->
+    </div><!--row-->
+</div><!--container-->
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<script language="javascript">
+    $(function(){
+        $('#header').load('header.html');
+
+    })
+</script>
+
+</body>
+</html>

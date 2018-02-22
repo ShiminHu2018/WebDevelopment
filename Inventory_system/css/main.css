@@ -1,0 +1,34 @@
+.header{
+    background: #0b54ba;
+}
+.logo{
+    width: 200px;
+    height:35px;
+    /*padding-top: -15px;*/
+    padding-bottom: 10px;
+}
+#badgecolor{
+background-color: #ba492d;
+    margin-right:10px;
+
+}
+.sidebar{
+    margin-top:51px;
+}
+.sidebarheight{
+    margin-top:20px;
+}
+.title_right{ font-size:12px;font-family:"microsoft yahei"; border-bottom:1px solid #ddd; margin-bottom:20px; line-height:30px;}
+.title_right strong{ border-bottom:1px solid #F60;line-height:30px; display:inline-block; padding:0 10px; margin-bottom:-1px;}
+.tablesize{
+    margin-top:25px;
+    font-size:12px;
+
+}
+
+#pagesize{
+    margin:0 250px;
+}
+#exportsize{
+    margin-right:25px;
+}

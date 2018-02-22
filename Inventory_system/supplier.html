@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- 上述3个meta标签*必须*放在最前面，任何其他内容都*必须*跟随其后！ -->
+    <title>库存系统</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+
+<!--导航栏-->
+<div id="header"></div>
+
+<!--侧边栏-->
+
+<div class="container-fluid">
+    <div class="row sidebar">
+        <div class="col-sm-3 col-md-2">
+            <div class="navbar navbar-default " >
+                <ul class="nav sidebarheight" id="Mu1">
+                    <li>
+                        <!--搜索-->
+                        <div class="input-group mysearch">
+
+                            <input type="text" class="form-control"/>
+                    <span class="input-group-btn ">
+                        <button type="button" class="btn btn-default">
+                            <span class="glyphicon glyphicon-search"></span>
+                        </button>  </span>
+                        </div>
+                    </li>
+                    <li>
+                        <a href="#sub1"  data-toggle="collapse" >库存管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub1" class="nav collapse">
+                            <li><a href="unpro.html"><span class="glyphicon glyphicon-list-alt"></span> 未出库管理</a> </li>
+                            <li><a href="alpro.html"><span class="glyphicon glyphicon-list-alt"></span> 已出库管理</a> </li>
+                            <li><a href="stock.html"><span class="glyphicon glyphicon-list-alt"></span> 库存清单</a> </li>
+                            <li><a href="stock_print.html"><span class="glyphicon glyphicon-list-alt"></span> 每月报表统计</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sub2"  data-toggle="collapse" >入库管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub2" class="nav collapse">
+                            <li><a href="supplier.html"><span class="glyphicon glyphicon-info-sign"></span> 供应商信息</a> </li>
+                            <li><a href="proin.html"><span class="glyphicon glyphicon-list-alt"></span> 入库登记</a> </li>
+                            <li><a href="proin_search.html"><span class="glyphicon glyphicon-list-alt"></span> 入库信息</a> </li>
+                            <li><a href="proin_print.html"><span class="glyphicon glyphicon-print"></span> 入库打印</a> </li>
+                            <li><a href="proin_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                            <li><a href="proin_log.html"><span class="glyphicon glyphicon-list-alt"></span> 入库修改日志</a> </li>
+                            <li><a href="supplier_log.html"><span class="glyphicon glyphicon-list-alt"></span> 供应商修改日志</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sub3"  data-toggle="collapse" >出库管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub3" class="nav collapse">
+                            <li><a href="receiver.html"><span class="glyphicon glyphicon-info-sign"></span> 领取人信息</a> </li>
+                            <li><a href="proout.html"><span class="glyphicon glyphicon-list-alt"></span> 出库登记</a> </li>
+                            <li><a href="proout_search.html"><span class="glyphicon glyphicon-info-sign"></span> 出库信息</a> </li>
+                            <li><a href="proin_print.html"><span class="glyphicon glyphicon-print"></span> 出库打印</a> </li>
+                            <li><a href="proout_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                            <li><a href="proout_log.html"><span class="glyphicon glyphicon-list-alt"></span> 出库修改日志</a> </li>
+                            <li><a href="receiver_log.html"><span class="glyphicon glyphicon-list-alt"></span> 领取人修改日志</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sub4"  data-toggle="collapse" >退库管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub4" class="nav collapse">
+                            <li><a href="retstock_input.html"><span class="glyphicon glyphicon-list-alt"></span> 退库登记</a> </li>
+                            <li><a href="retstock_search.html"><span class="glyphicon glyphicon-info-sign"></span> 退库信息</a> </li>
+                            <li><a href="retstock_print.html"><span class="glyphicon glyphicon-print"></span> 退库打印</a> </li>
+                            <li><a href="retstock_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                            <li><a href="retstock_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sub5"  data-toggle="collapse" >退厂管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub5" class="nav collapse">
+                            <li><a href="retmanuf.html"><span class="glyphicon glyphicon-list-alt"></span> 退厂登记</a> </li>
+                            <li><a href="retmanuf_search.html"><span class="glyphicon glyphicon-info-sign"></span> 退厂信息</a> </li>
+                            <li><a href="retmanuf_print.html"><span class="glyphicon glyphicon-print"></span> 退厂打印</a> </li>
+                            <li><a href="retmanuf_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                            <li><a href="retmanuf_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sub6"  data-toggle="collapse" >未出库损耗管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub6" class="nav collapse">
+                            <li><a href="nobreak.html"><span class="glyphicon glyphicon-list-alt"></span> 损耗登记</a> </li>
+                            <li><a href="nobreak_search.html"><span class="glyphicon glyphicon-info-sign"></span> 损耗信息</a> </li>
+                            <li><a href="nobreak_print.html"><span class="glyphicon glyphicon-print"></span> 损耗打印</a> </li>
+                            <li><a href="nobreak_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                            <li><a href="nobreak_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#sub7"  data-toggle="collapse" >已出库损耗管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub7" class="nav collapse">
+                            <li><a href="send_search"><span class="glyphicon glyphicon-info-sign"></span> 损耗材料统计</a> </li>
+                            <li><a href="isbreak.html"><span class="glyphicon glyphicon-list-alt"></span> 损耗登记</a> </li>
+                            <li><a href="isbreak_search.html"><span class="glyphicon glyphicon-info-sign"></span> 损耗信息</a> </li>
+                            <li><a href="isbreak_print.html"><span class="glyphicon glyphicon-print"></span> 损耗打印</a> </li>
+                            <li><a href="isbreak_import.html"><span class="glyphicon glyphicon-cloud-download"></span> 批量导入</a> </li>
+                            <li><a href="isbreak_log.html"><span class="glyphicon glyphicon-list-alt"></span> 修改日志</a> </li>
+                        </ul>
+                    </li>
+
+                    <li>
+                        <a href="#sub8"  data-toggle="collapse" >系统管理<span class="glyphicon glyphicon-chevron-right pull-right"></span> </a>
+                        <ul id="sub8" class="nav collapse">
+                            <li><a href="information1_search.html"><span class="glyphicon glyphicon-list-alt"></span> 一级菜单管理</a> </li>
+                            <li><a href="information2_search.html"><span class="glyphicon glyphicon-list-alt"></span> 二级菜单管理</a> </li>
+                            <li><a href="account.html"><span class="glyphicon glyphicon-user"></span> 账号管理</a> </li>
+                            <li><a href="user.html"><span class="glyphicon glyphicon-user"></span> 用户管理</a> </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="col-sm-9 col-md-10">
+            <ol class="breadcrumb sidebarheight">
+                <span >当前位置：</span>
+                <li><a href="index.html" class="active">首页</a></li>
+                <li><a href="#">入库管理</a></li>
+                <li><a href="supplier.html">供货商信息</a></li>
+            </ol>
+            <div class="title_right"><strong>查询信息</strong></div>
+            <form class="form-inline">
+                <!-- Split button -->
+
+                <div class="form-group">
+                    <label>供货商名称：</label>
+                    <select class="form-control">
+                        <option>请选择</option>
+                        <option>爱牙库</option>
+                        <option>淘宝</option>
+                        <option>上海汉瑞祥有限公司</option>
+
+                    </select>
+
+
+                    <label>所在地区：</label>
+                    <select class="form-control ">
+                        <option>请选择</option>
+                        <option>广州</option>
+                        <option>上海</option>
+                        <option>深圳</option>
+                        <option>武汉</option>
+
+                    </select>
+
+
+                <button type="submit" class="btn btn-default">查询</button></form>
+
+                    <form class="form-group"   id="exportsize">
+                        &nbsp;&nbsp;  &nbsp;&nbsp;   &nbsp;&nbsp;  &nbsp;&nbsp; <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-export" ></span>&nbsp;导出</button>
+                </form>
+
+
+        </div> <!--formgroup-->
+
+            <div class="tablesize">
+                <table class="table table-striped table-bordered table-hover">
+                    <thead>
+                    <tr>
+                        <th>#</th>
+                        <th>供货商名称</th>
+                        <th>所在地区</th>
+                        <th>是否为一般纳税人</th>
+                        <th>联系人信息</th>
+                        <th>&nbsp;</th>
+
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>爱牙库</td>
+                        <td>深圳</td>
+                        <td>是</td>
+                        <td> <a href="#" data-toggle="modal" data-target="#myModal">无</a></td>
+                        <td> <a href="#" >删除</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>2</td>
+                        <td>奥齿泰（深圳）贸易有限公司</td>
+                        <td>深圳</td>
+                        <td>是</td>
+                        <td> <a href="#" data-toggle="modal" data-target="#myModal">无</a></td>
+                        <td> <a href="#" >删除</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>3</td>
+                        <td>广州汉瑞祥和茂医疗器械有限公司</td>
+                        <td>广州</td>
+                        <td>是</td>
+                        <td> <a href="#" data-toggle="modal" data-target="#myModal">无</a></td>
+                        <td> <a href="#" >删除</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>4</td>
+                        <td>广州骏睿雅达医疗器械有限公司</td>
+                        <td>广州</td>
+                        <td>是</td>
+                        <td> <a href="#" data-toggle="modal" data-target="#myModal2">详细</a></td>
+                        <td> <a href="#" >删除</a></td>
+                    </tr>
+
+                    <tr>
+                        <td>5</td>
+                        <td>南昌普洋科技有限公司</td>
+                        <td>深圳</td>
+                        <td>是</td>
+                        <td> <a href="#" data-toggle="modal" data-target="#myModal2">详细</a></td>
+                        <td> <a href="#" >删除</a></td>
+                    </tr>
+
+
+                    </tr>
+                    </tbody>
+
+                </table>
+
+
+
+                <nav >
+
+                    <ul class="pagination" id="pagesize">
+                        <li><a href="#">总共 480 条记录 &nbsp;  &nbsp;  10 条记录在当前页面    &nbsp;  &nbsp;   1-10 在此页    &nbsp;  &nbsp;  1/48 页  </a></li>
+                        <li>
+                            <a href="#" aria-label="Previous">
+                                <span aria-hidden="true">上一页</span>
+                            </a>
+                        </li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li>
+                            <a href="#" aria-label="Next">
+                                <span aria-hidden="true">下一页</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div><!--tablesize-->
+
+
+            <!-- 按钮触发模态框 -->
+
+
+
+        <!-- 模态框（Modal） -->
+        <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title" id="myModalLabel">详细信息</h4>
+                    </div>
+
+
+                    <div class="modal-body">
+                        <table class="table table-bordered">
+
+                            <tr><td><b>* 供应商名称：</td><td>爱牙库</td><td><b>	* 所在地区：</td><td>深圳</td><td><b>*是否为一般纳税人：</td><td> <input type="radio" value="是" name="choice1" checked="checked"> 是  <input value="否"  name="choice1" type="radio"> 否</td></tr>
+                            <tr><td><b>邮政编码：</td><td>&nbsp;</td><td><b>邮政地址：</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                        <table class="table table-bordered">
+                            <tr><td colspan="6" align="center"><b>联系人信息</td></tr>
+                            <tr><td><b>姓名1：</td><td>&nbsp;</td><td><b>	职务1：</td><td>&nbsp;</td><td><b>性别1：</td><td> <input type="radio" value="男" name="choice2" checked="checked"> 男  <input value="女"  name="choice1" type="radio"> 女</td></tr>
+                            <tr><td><b>QQ1：</td><td>&nbsp;</td><td><b>电话1：</td><td>&nbsp;</td></tr>
+                            <tr><td><b>姓名2：</td><td>&nbsp;</td><td><b>	职务2：</td><td>&nbsp;</td><td><b>性别2：</td><td> <input type="radio" value="男" name="choice3" checked="checked"> 男  <input value="女"  name="choice1" type="radio"> 女</td></tr>
+                            <tr><td><b>QQ2：</td><td>&nbsp;</td><td><b>电话2：</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                        </table>
+                        <table class="table table-bordered">
+                            <tr><td colspan="6" align="center"><b>供应商银行信息</td></tr>
+                            <tr><td><b>开户银行1：</td><td>&nbsp;</td><td><b>	账户名1：</td><td>&nbsp;</td><td><b>账号1：</td><td> &nbsp;</td></tr>
+                            <tr><td><b>开户银行2：</td><td>&nbsp;</td><td><b>	账户名2：</td><td>&nbsp;</td><td><b>账号2：</td><td> &nbsp;</td></tr>
+                            <tr><td><b>备注：</td><td colspan="5"></td></tr>
+                        </table>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                        <button type="button" class="btn btn-default">修改</button>
+                    </div>
+                </div><!-- /.modal-content -->
+            </div><!-- /.modal -->
+        </div>
+
+            <!-- 模态框（Modal2） -->
+            <div class="modal fade" id="myModal2" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                            <h4 class="modal-title" id="myModalLabel">详细信息</h4>
+                        </div>
+
+
+                        <div class="modal-body">
+                            <table class="table table-bordered">
+
+                                <tr><td><b>* 供应商名称：</td><td>广州骏睿雅达医疗器械有限公司</td><td><b>	* 所在地区：</td><td>广州</td><td><b>*是否为一般纳税人：</td><td> <input type="radio" value="是" name="choice1" checked="checked"> 是  <input value="否"  name="choice1" type="radio"> 否</td></tr>
+                                <tr><td><b>邮政编码：</td><td>&nbsp;</td><td><b>邮政地址：</td><td colspan="3">南山区深南大道12069号海岸试戴公寓东B501</td></tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr><td colspan="6" align="center"><b>联系人信息</td></tr>
+                                <tr><td><b>姓名1：</td><td>车经理</td><td><b>	职务1：</td><td>&nbsp;</td><td><b>性别1：</td><td> <input type="radio" value="男" name="choice2" checked="checked"> 男  <input value="女"  name="choice1" type="radio"> 女</td></tr>
+                                <tr><td><b>QQ1：</td><td>&nbsp;</td><td><b>电话1：</td><td>&nbsp;</td></tr>
+                                <tr><td><b>姓名2：</td><td>&nbsp;</td><td><b>	职务2：</td><td>&nbsp;</td><td><b>性别2：</td><td> <input type="radio" value="男" name="choice3" checked="checked"> 男  <input value="女"  name="choice1" type="radio"> 女</td></tr>
+                                <tr><td><b>QQ2：</td><td>&nbsp;</td><td><b>电话2：</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+                            </table>
+                            <table class="table table-bordered">
+                                <tr><td colspan="6" align="center"><b>供应商银行信息</td></tr>
+                                <tr><td><b>开户银行1：</td><td>&nbsp;</td><td><b>	账户名1：</td><td>&nbsp;</td><td><b>账号1：</td><td> &nbsp;</td></tr>
+                                <tr><td><b>开户银行2：</td><td>&nbsp;</td><td><b>	账户名2：</td><td>&nbsp;</td><td><b>账号2：</td><td> &nbsp;</td></tr>
+                                <tr><td><b>备注：</td><td colspan="5"></td></tr>
+                            </table>
+
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-info" data-dismiss="modal">关闭</button>
+                            <button type="button" class="btn btn-default">修改</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div>
+            </div><!-- /.modal -->
+
+
+        </div><!-- <div class="col-sm-9 col-md-10">-->
+    </div><!--row-->
+</div><!--container-->
+
+
+
+
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.min.js"></script>
+
+<script language="javascript">
+    $(function(){
+        $('#header').load('header.html');
+
+    })
+</script>
+
+</body>
+</html>
